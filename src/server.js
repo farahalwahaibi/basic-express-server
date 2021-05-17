@@ -12,6 +12,11 @@ const app = express();
 app.use( express.json() );
 app.use( logger );
 
+// Home route
+app.get( '/',( req,res )=>{
+  res.send( 'Welcome' );
+} );
+
 // localhost:3000/person?name=farah
 app.get( '/person',validator, ( req,res )=>{
   res.json( {
